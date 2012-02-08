@@ -1,0 +1,108 @@
+#{extends 'main.html' /}
+#{set title:'hubdive : analysis of ' + name + ' from ' + projectOwner /}
+
+#{set 'moreScripts'}
+	<script src="@{'/public/javascripts/bluff-0.3.6.2/excanvas.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+	<script src="@{'/public/javascripts/bluff-0.3.6.2/js-class.js'}" type="text/javascript" charset="${_response_encoding}"></script>	
+	<script src="@{'/public/javascripts/bluff-0.3.6.2/bluff-min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+	<script src="@{'/public/javascripts/bookmark.js'}" type="text/javascript" charset="${_response_encoding}"></script>	
+#{/set}
+
+
+<div class="logo">
+<a href="/" style="display:block;width:100%;height:100%;"></a>
+</div>
+
+
+
+<div class="analytics">
+
+<div class ="general">
+
+<span class ="title"><span class="bold">Analysis</span> of <a href="http://github.com/${projectOwner}/${name}">${name}</a> from ${projectOwner} </span>
+ <a href="" class="bookmark" onMouseOver="$('#bookmark').attr('src', '/public/images/bookmarkOver.png');" onMouseOut="$('#bookmark').attr('src', '/public/images/bookmark.png');"><img id="bookmark" src ="/public/images/bookmark.png" width=16 height=16/> </a>
+
+<div class ="committers">
+
+${project.getForks()} forks and ${project.getWatchers()} watchers 
+
+<br />
+<br />
+
+${impacts.size()} committers
+
+<ul>
+#{list items:impacts, as:'impactByCommitter'}
+
+#{if impactByCommitter.getKey().getUsername().isEmpty()}
+<li> #{gravatar gravatarId:impactByCommitter.getKey().getGravatarId()/} <span class="login"><a href="http://github.com/${impactByCommitter.getKey().getLogin()}">${impactByCommitter.getKey().getLogin()}</a></span> : ${impactByCommitter.getValue()} %  </li>
+#{/if}
+#{else}
+<li>  #{gravatar gravatarId:impactByCommitter.getKey().getGravatarId()/} <span class="login"><a href="http://github.com/${impactByCommitter.getKey().getLogin()}">${impactByCommitter.getKey().getLogin()}</a></span> <span class="username">(${impactByCommitter.getKey().getUsername()})</span> : ${impactByCommitter.getValue()} %  </li>
+#{/else}
+
+#{/list}
+</ul>
+
+</div>
+</div>
+<div class = "timeline">
+
+	
+  <canvas id="example" width="600" height="400"></canvas>
+
+	      <script type="text/javascript">
+        window.onload = function() {
+          var g = new Bluff.Line('example', '600x400');
+          
+           %{
+           commits = stats.getCommitsPerUnitByUser();
+           period = "";
+           unit = stats.getUnit();
+           if (unit == 1) {
+           	period = "years";
+           } else if (unit ==2) {
+           	period = "months of " + stats.getYear();
+           } else {
+           	period = "days of " + stats.getMonth() +" " + stats.getYear();
+           }
+          	out.println('g.title = \'Commits timeline for ' + period + '\';'); 
+          }%
+          
+          g.tooltips = true;
+          g.set_font('Verdana');
+          g.title_font_size = 18;
+          g.legend_font_size = 14;
+          g.marker_font_size = 14;
+          g.theme_pastel();
+          
+          %{
+          	for (entry in commits.entrySet()) {
+          		login = entry.getKey();
+          		out.print('g.data("' + login +'", [');
+          		tab = entry.getValue();
+          		for (i=0; i<tab.length; i++) {
+          			if (i != 0)
+          				out.print(', ');
+          			out.print(tab[i]);		
+          		}
+          		out.print(']);\n');
+          	}
+          	out.print('g.labels = {');
+          	
+          	
+          	for (i=0; i<stats.length; i++) {
+          		if (i != 0)
+          				out.print(', ');
+          		out.print(i + ':\'' + (stats.getStart() +i) + '\'');
+          	}
+          	out.println('};');
+          }%
+          
+                    
+          g.draw();
+        };
+        </script>
+	
+</div>
+</div>

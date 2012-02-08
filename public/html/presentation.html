@@ -1,0 +1,192 @@
+<html>
+<head>
+<link rel="stylesheet" href="/public/html/bootstrap-1.4.0-min.css"/>
+</head>
+<body>
+<div class="container">
+<br />
+<br />
+<img src="/public/images/logo.png" />
+<br />
+<br />
+
+<div class="page-header">
+<h2> Features <small>Diving with pleasure </small></h2>
+</div>
+
+
+<h3> Search </h3>
+
+    <ul class="media-grid">
+    <li><a>
+    <img class="thumbnail" src="/public/html/searchMain.png" alt="">
+    	</a>
+    </li>
+    <li>
+    <a>
+    <img class="thumbnail" src="/public/html/searchSecond.png" alt="">
+     </a>
+    </li>
+    </ul>
+
+<h3> Analyze </h3>
+
+    <ul class="media-grid">
+    <li><a>
+    <img class="thumbnail" src="/public/html/analyse.png" alt="">
+    	</a>
+    </li>
+    <li>
+    <a>
+    <img class="thumbnail" src="/public/html/timelineDays.png" alt="">
+    </a>
+    </li>
+    </ul>
+
+
+<h3> Bookmark </h3>
+
+<ul class="media-grid">
+    <li><a>
+    <img class="thumbnail" src="/public/html/bookmark.png" alt="">
+    	</a>
+    </li>
+</ul>
+
+<br />
+<br />
+<br />
+<div class="page-header">
+<h2> User Experience <small>small details you will love </small></h2>
+</div>
+
+
+	<h3> Placeholder   <span style="margin-left:130px;">Dynamic title</span> <span style="margin-left:122px;">Gravatar</span></h3>
+	
+    <ul class="media-grid">
+    <li><a>
+    <img class="thumbnail" src="/public/html/placeholder.png" alt="">
+    	</a>
+    </li>
+    <li>
+    <a>
+    <img class="thumbnail" src="/public/html/numInTitle.png" alt="">
+    </a>
+    </li>
+        <li>
+    <a>
+    <img class="thumbnail" src="/public/html/gravatar.png" alt="">
+    </a>
+    </li>
+    </ul>
+
+	<h3> Adaptative timeline  <span style="margin-left:68px;">Beautiful errors</span></h3>
+	
+	<ul class="media-grid">
+    <li><a>
+    <img class="thumbnail" src="/public/html/adaptative.png" alt="">
+    	</a>
+    </li>
+    
+    <li><a>
+    <img class="thumbnail" src="/public/html/niceErrors.png" alt="">
+    	</a>
+    </li>
+    </ul>
+
+
+<br />
+<br />
+<br />
+<div class="page-header">
+<h2> API <small> connected with the world </small></h2>
+</div>
+	<ul class="media-grid">
+    <li><a>
+    <img class="thumbnail" src="/public/html/API.png" alt="">
+    	</a>
+    </li>
+    </ul>
+
+<br />
+<br />
+<br />
+<div class="page-header">
+<h2> Code <small> behind the scene </small></h2>
+</div>
+
+
+<h3> Architecture </h3>
+
+<p>The application uses the Play! framework and follow separation of concerns through the <abbr title="Model View Controller">MVC </abbr>pattern.</p>
+
+<h4> Model </h4>
+
+<p>The data model is made up of 3 classes independent of the hub</p>
+
+<dl xmlns="http://www.w3.org/1999/xhtml">
+        <dt>Project </dt>
+        <dd>A project or repository hosted on a hub. It has notably an owner and an URL.</dd>
+        <dt>Committer</dt>
+        <dd>A user (registered or not to the hub) who did a <em>Commit</em> on a repository.</dd>
+        <dt>Commit</dt>
+        <dd>A commit made by a <em>Committer</em> with a message at a date.</dd>
+ </dl>
+
+<p> Instances of model are retrieved through <strong>HubDive</strong>. Each hub have a specific implementation of <em>HubDive</em>.</p>
+
+<br />
+<h4> Views </h4
+
+<p>There is one view for each user screen</p>
+
+<dl xmlns="http://www.w3.org/1999/xhtml">
+<dt>Index</dt>
+<dd>Display an index page to launch a search.</dd>
+<dt>Search</dt>
+<dd>Display search results and launch a new search.</dd>
+<dt>Show</dt>
+<dd>Display information about a project.</dd>
+</dl>
+
+<p> The <em>Index</em> and <em>Search</em> views share the search form through a <em>tag</em> </p>
+
+<h4> Controllers </h4>
+<p> There is one controller for the Application and one for the Api.</p>
+<h4> Connection </h4>
+
+<h5>HTTP client</h5>
+
+<p>To access hub API, an <em>handmade</em> non asynchronous http client is used</p>
+
+<h5> Cache</h5>
+
+<p>To cache http response an <em>handmade</em> <abbr title="Last Recent Used">LRU </abbr>cache with <abbr title="Time To Live">TTL</abbr>.</p>
+
+<h3> Tests </h3>
+<ul class="media-grid">
+ <li><a>
+ <img class="thumbnail" src="/public/html/tests.png" alt="">
+ </a>
+ </li>
+ </ul>
+
+
+
+<br />
+<br />
+<br />
+<div class="page-header">
+<h2> About me <small> keep in touch </small></h2>
+</div>
+			<img src ="https://secure.gravatar.com/avatar/32baeaffd9abf6aee0dee32a34ddac91?s=60"/>
+			<address xmlns="http://www.w3.org/1999/xhtml">
+            <strong>Mariot Chauvin</strong> (<a href="http://twitter.com/mchv">mchv</a>) <br/>
+            <a mailto="">mariot.chauvin@gmail.com</a>
+          	</address>
+			
+</div>
+</body>
+</html>
+
+

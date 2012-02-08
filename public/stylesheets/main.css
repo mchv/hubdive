@@ -1,0 +1,163 @@
+
+.biglogo {
+background : transparent url("../images/biglogo.png") no-repeat;
+height : 308px;
+width : 350px;
+margin : 0 auto;
+}
+
+.logo {
+background : transparent url("../images/logo.png") no-repeat;
+height : 64px;
+width : 240px;
+margin : 0 auto;
+} 
+
+.error {
+margin-top : 50px;
+text-align : center;
+font-family: Verdana, Arial;
+font-size: 20px; 
+}
+ 
+.errormessage {
+margin-top : 20px;
+text-align : center;
+font-family: Verdana, Arial;
+font-size: 14px; 
+}
+
+
+.search {
+margin-top : 20px;
+text-align : center;
+}
+
+.results {
+margin-left : 40px;
+}
+
+.results .project {
+margin-top : 30px;
+font-family: Verdana, Arial;
+font-size: 14px; 
+color: #70ABD0;
+}
+
+.results .project a:link {
+	text-decoration:none;
+	font-family: Verdana, Arial;
+	font-size: 14px; 
+	color: #70ABD0;
+}
+
+.results .project a:visited {
+	text-decoration:none;
+	font-family: Verdana, Arial;
+	font-size: 14px; 
+	color: #70ABD0;
+}
+
+.results .project a:hover {
+	text-decoration:underline;
+	font-family: Verdana, Arial;
+	font-size: 14px; 
+	color: #70ABD0;
+}
+
+.results .project .owner {
+margin-top: 5px;
+font-style: italic;
+font-size: 12px;
+color: black;
+}
+
+
+
+.analytics {
+	overflow:hidden;
+}
+
+.general {
+	float:left;
+	width:400px;
+	margin-left:40px;
+	font-family: Verdana, Arial;
+	font-size: 12px;
+ }
+
+.general .title {
+	font-family: Verdana, Arial;
+	font-size: 14px;
+}
+
+.general .title a:link {
+	text-decoration:none;
+	color:black;
+}
+
+.general .title a:visited {
+	text-decoration:none;
+	color:black;
+}
+
+.general .title a:hover {
+	text-decoration:underline;
+	color:black;
+}
+
+.general .title .bold {
+	font-family: Verdana, Arial;
+	font-weight: bold; 
+}
+
+.committers {
+	margin-top:20px;
+}
+
+
+
+.committers .login {
+	font-family: Verdana, Arial;
+	font-size: 12px;
+	font-weight: bold; 
+	color: #70ABD0;
+}
+
+.committers .login a:link {
+	text-decoration:none;
+	font-family: Verdana, Arial;
+	font-size: 12px;
+	font-weight: bold; 
+	color: #70ABD0;
+}
+
+.committers .login a:visited {
+	text-decoration:none;
+	font-family: Verdana, Arial;
+	font-size: 12px;
+	font-weight: bold; 
+	color: #70ABD0;
+}
+
+.committers .login a:hover {
+	text-decoration:underline;
+	font-family: Verdana, Arial;
+	font-size: 12px;
+	font-weight: bold; 
+	color: #70ABD0;
+}
+
+.committers .username {
+	font-family: Verdana, Arial;
+	font-size: 12px; 
+	color: #99A7B8;
+}
+
+.timeline {
+	margin-top:50px;
+	margin-left:440px;
+}
+
+
+

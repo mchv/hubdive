@@ -1,0 +1,21 @@
+#{extends 'main.html' /}
+#{set title:'hubdive : ' + projects.size() + ' projects found ' /}
+
+<div class="logo">
+</div>
+
+#{searchForm query:query/}
+
+<div class="results">
+#{list items:projects, as:'project'}
+	<div class="project">
+		<a href="@{Application.show(project.getOwner(), project.getName())}">${project.getName()}</a>
+		<br/>
+		<div class="owner">
+		by ${project.getOwner()}
+		</div>
+	</div>
+#{/list}
+</div>
+
+
