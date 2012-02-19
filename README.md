@@ -9,8 +9,7 @@ It uses the current [stable github api](http://develop.github.com/p/general.html
 The application was created to *play* with the framework and several improvements could be made, for instance:
 
 * Use the provided HTTP client instead of the created one
-* Use the provided cache, instead of the created one 
-* Use Groovy fold function instead of iterations with special case in the views
+* Use the provided cache, instead of the created one
 
 ## Screenshots
 
