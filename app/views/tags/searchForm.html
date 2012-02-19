@@ -6,10 +6,10 @@
 <!-- special feature -->
 
 #{if _query == null}
-<input name="query" type="text" placeholder="Project you look at"/>
+<input name="query" type="search" placeholder="Project you look at"/>
 #{/if}
 #{else}
-<input name="query" type="text" value="${_query}"/>
+<input name="query" type="search" value="${_query}"/>
 #{/else}
 <input value="search" type="submit">
 #{/form}
