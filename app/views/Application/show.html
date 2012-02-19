@@ -61,7 +61,7 @@ ${impacts.size()} committers
            unit = stats.getUnit();
            if (unit == 1) {
            	period = "years";
-           } else if (unit ==2) {
+           } else if (unit == 2) {
            	period = "months of " + stats.getYear();
            } else {
            	period = "days of " + stats.getMonth() +" " + stats.getYear();
@@ -81,21 +81,17 @@ ${impacts.size()} committers
           		login = entry.getKey();
           		out.print('g.data("' + login +'", [');
           		tab = entry.getValue();
-          		for (i=0; i<tab.length; i++) {
-          			if (i != 0)
-          				out.print(', ');
-          			out.print(tab[i]);		
-          		}
+              out.print(tab.join(', '));
           		out.print(']);\n');
           	}
           	out.print('g.labels = {');
-          	
-          	
+            
+            labels = [];
           	for (i=0; i<stats.length; i++) {
-          		if (i != 0)
-          				out.print(', ');
-          		out.print(i + ':\'' + (stats.getStart() +i) + '\'');
+              offset = (stats.getStart()+i);
+          		labels.add(i + ':\'' + offset + '\'');
           	}
+            out.print(labels.join(', '));
           	out.println('};');
           }%
           
