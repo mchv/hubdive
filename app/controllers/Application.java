@@ -96,8 +96,13 @@ public class Application extends Controller {
     			} else if (cause instanceof IOException) {
     				message = "It seems that the hub is not available. Check your connection";    				
     			} else {
-    				message = cause.getMessage();
-    				cause.printStackTrace();
+                    if (cause != null) {
+                        message = cause.getMessage();
+                        cause.printStackTrace();                        
+                    } else {
+                        e.printStackTrace();
+                    }
+
     			}
     		}
 		renderTemplate("errors/connection.html", error, message);
